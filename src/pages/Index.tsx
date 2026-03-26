@@ -6,6 +6,8 @@ import { Eligibility } from "@/components/landing/Eligibility";
 import { Process } from "@/components/landing/Process";
 import { Locations } from "@/components/landing/Locations";
 import { Footer } from "@/components/landing/Footer";
+import { Link } from "react-router-dom";
+import { Shield } from "lucide-react";
 
 const Index = () => {
   return (
@@ -20,6 +22,15 @@ const Index = () => {
         <Locations />
       </main>
       <Footer />
+
+      {/* Floating Admin Access Button */}
+      <Link
+        to="/admin/login"
+        className="fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full bg-foreground text-background px-4 py-2.5 shadow-elevated text-sm font-medium hover:opacity-90 transition-opacity"
+      >
+        <Shield className="h-4 w-4" />
+        Admin Portal
+      </Link>
     </div>
   );
 };
