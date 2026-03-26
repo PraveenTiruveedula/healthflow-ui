@@ -32,7 +32,7 @@ const ScreenerResult = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Link to="/">
+              <Link to="/patient">
                 <Button variant="outline" className="gap-2 rounded-xl w-full">
                   <Home className="h-4 w-4" /> Back to Home
                 </Button>
@@ -69,7 +69,7 @@ const ScreenerResult = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Link to="/">
+              <Link to="/patient">
                 <Button variant="outline" className="gap-2 rounded-xl w-full">
                   <Home className="h-4 w-4" /> Back to Home
                 </Button>
