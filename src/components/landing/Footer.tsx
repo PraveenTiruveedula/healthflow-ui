@@ -47,8 +47,8 @@ export function Footer() {
               <li><span className="text-sm text-muted-foreground">info@clintrial.example</span></li>
               <li><span className="text-sm text-muted-foreground">(800) 555-TRIAL</span></li>
               <li className="pt-2">
-                <Link to="/admin/login" className="text-xs text-muted-foreground/50 hover:text-muted-foreground transition-colors">
-                  Admin Portal
+                <Link to="/" className="text-xs text-muted-foreground/50 hover:text-muted-foreground transition-colors">
+                  Portal Home
                 </Link>
               </li>
             </ul>
