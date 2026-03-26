@@ -10,6 +10,7 @@ const navLinks = [
   { label: "Eligibility", href: "#eligibility" },
   { label: "Process", href: "#process" },
   { label: "Locations", href: "#locations" },
+  { label: "Admin", href: "/admin/login", isRoute: true },
 ];
 
 export function Navbar() {
@@ -19,7 +20,7 @@ export function Navbar() {
     <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/50">
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
         {/* Logo */}
-        <Link to="/patient" className="flex items-center gap-2.5">
+        <Link to="/" className="flex items-center gap-2.5">
           <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
             <span className="text-primary-foreground font-heading font-bold text-sm">CT</span>
           </div>
@@ -28,15 +29,25 @@ export function Navbar() {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-6">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) =>
+            link.isRoute ? (
+              <Link
+                key={link.href}
+                to={link.href}
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {link.label}
+              </Link>
+            ) : (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {link.label}
+              </a>
+            )
+          )}
         </div>
 
         {/* Right Actions */}
@@ -60,16 +71,27 @@ export function Navbar() {
       {/* Mobile Menu */}
       {mobileOpen && (
         <div className="md:hidden border-t border-border bg-background p-4 space-y-3 animate-fade-in">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="block text-sm font-medium text-muted-foreground hover:text-foreground py-2"
-              onClick={() => setMobileOpen(false)}
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) =>
+            link.isRoute ? (
+              <Link
+                key={link.href}
+                to={link.href}
+                className="block text-sm font-medium text-muted-foreground hover:text-foreground py-2"
+                onClick={() => setMobileOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ) : (
+              <a
+                key={link.href}
+                href={link.href}
+                className="block text-sm font-medium text-muted-foreground hover:text-foreground py-2"
+                onClick={() => setMobileOpen(false)}
+              >
+                {link.label}
+              </a>
+            )
+          )}
           <div className="pt-3 space-y-3 border-t border-border">
             <LanguageSelector />
             <Link to="/screener" className="block">
