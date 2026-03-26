@@ -10,6 +10,7 @@ const navLinks = [
   { label: "Eligibility", href: "#eligibility" },
   { label: "Process", href: "#process" },
   { label: "Locations", href: "#locations" },
+  { label: "Admin", href: "/admin/login", isRoute: true },
 ];
 
 export function Navbar() {
